@@ -1,0 +1,80 @@
+
+
+main {
+    padding: 20px;
+}
+
+/* Style the menu items */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col-lg-6 {
+    flex: 0 0 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+}
+
+/* Style each menu item card */
+.d-flex {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Apply box shadow only to the outer container */
+.d-flex:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.img-fluid {
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+}
+
+.w-100 {
+    padding: 5px;
+    background-color: whitesmoke;
+}
+
+h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+h5 span {
+    font-weight: bold;
+}
+
+/* Adjustments for the modified structure */
+.d-flex .w-100 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Align text vertically center */
+    align-items: flex-start; /* Align text horizontally start */
+}
+
+.d-flex h5 {
+    display: flex; /* Set headings to flex */
+    align-items: center; /* Align h5 content center */
+    margin: 0; /* Remove default margin */
+}
+
+.text-primary {
+    color: #007bff;
+}
+.d-flex h5 img {
+    margin-right: 10px; /* Add space between image and text */
+}
+small {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Optional: Add some responsive styles */
+@media (max-width: 768px) {
+    .col-lg-6 {
+        flex: 0 0 calc(100% - 20px);
+        max-width: calc(100% - 20px);
+    }
+}

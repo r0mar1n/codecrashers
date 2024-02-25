@@ -20,3 +20,5 @@ Import SQL File: Import provided SQL file into the database.
 Verify Import: Ensure tables and data are imported.
 Update Settings: Update connection settings in PHP files if needed.
 By following these steps, you can run the Canteen Ordering System successfully using XAMPP. For any queries, contact us. Thank you!
+
+Video Demo: https://youtu.be/49N_lYC4Rsc

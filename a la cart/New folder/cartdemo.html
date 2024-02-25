@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts - Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .cart {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .cart h2 {
+      color: #007bff;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .item {
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+    }
+    .item:last-child {
+      border-bottom: none;
+    }
+    .item p {
+      margin: 0;
+    }
+    .total-amount {
+      font-size: 24px;
+      font-weight: 600;
+      margin-top: 20px;
+      text-align: right;
+      color: #007bff;
+    }
+    .btn-primary {
+      background-color: #4fbade;
+      border-color: #4fbade;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #4fbade;
+      border-color: #4fbade;
+    }
+    .btn-secondary {
+      background-color: #6c757d;
+      border-color: #6c757d;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .btn-secondary:hover {
+      background-color: #5a6268;
+      border-color: #5a6268;
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    .remove-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cart">
+      <h2>Your Cart</h2>
+      <div class="item">
+        <i class="fas fa-trash remove-btn" onclick="removeItem(this)"></i>
+        <p><strong>Item Name:</strong> Sample Item</p>
+        <p><strong>Quantity:</strong> 2</p>
+        <p><strong>Price:</strong> $20.00</p>
+      </div>
+      <div class="item">
+        <i class="fas fa-trash remove-btn" onclick="removeItem(this)"></i>
+        <p><strong>Item Name:</strong> Another Item</p>
+        <p><strong>Quantity:</strong> 1</p>
+        <p><strong>Price:</strong> $15.00</p>
+      </div>
+      <hr>
+      <p class="total-amount" id="totalAmount"><strong>Total Amount:</strong> </p>
+      <div class="text-center mt-4">
+        <button class="btn btn-primary mx-2">Add More Items <i class="fas fa-plus ml-1"></i></button>
+        <button class="btn btn-secondary mx-2">Confirm Your Order <i class="fas fa-check-circle ml-1"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Font Awesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const items = [
+        { name: 'Sample Item', quantity: 2, price: 20.00 },
+        { name: 'Another Item', quantity: 1, price: 15.00 }
+      ];
+
+      let totalAmount = 0;
+
+      items.forEach(item => {
+        totalAmount += item.quantity * item.price;
+      });
+
+      const totalAmountElement = document.getElementById('totalAmount');
+      totalAmountElement.textContent = `Total Amount: $${totalAmount.toFixed(2)}`;
+    });
+
+    function removeItem(element) {
+      const item = element.parentNode;
+      item.parentNode.removeChild(item);
+    }
+  </script>
+</body>
+</html>
+

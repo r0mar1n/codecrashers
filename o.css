@@ -1,0 +1,159 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.container-xxl {
+    margin-top: 50px;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #295562;
+}
+
+
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #FFDE5C;
+}
+
+.user-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 220px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: max-height 0.3s;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 200px;
+}
+
+.sub-menu {
+    padding: 15px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.sub-menu-link img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+h3 {
+    margin-bottom: 20px;
+    color: #007bff;
+    font-weight: 600;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 0 0 calc(30% - 20px);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    padding: 15px;
+    background-color: #295562;
+    color: #FFDE5C;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content p {
+    margin-bottom: 10px;
+}
+
+.total-amount {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: right;
+    color: #007bff;
+}
+
+
+.cart {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .cart h2 {
+    color: #295562; /* Change font color to #295562 */
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .card-header h3{
+    color:#fff
+  }

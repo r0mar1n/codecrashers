@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order History</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <style>
+    body {
+      background-image: url('bgimage.jpg');
+      background-size: cover;
+      background-position: center;;
+      font-family: 'Open Sans', sans-serif;
+      color: black;
+    }
+    container {
+      margin-top: 50px;
+    }
+    .section-header {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .order {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .order h4 {
+      color: #007bff;
+      margin-top: 0;
+      font-weight: 600;
+    }
+    .order ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .order ul li {
+      margin-bottom: 5px;
+    }
+    .order p {
+      margin: 0;
+    }
+    .no-orders-message {
+      font-style: italic;
+      color: #6c757d;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="text-center mb-0" style="color: #333; font-weight: bold;">Your Order History</h2>
+    </div>
+    <div id="orderHistory" class="mt-4">
+      <!-- Order history will be displayed here -->
+    </div>
+    <div class="text-center mt-4">
+      <a href="#" class="btn btn-primary">Place New Order</a>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const orderHistoryDiv = document.getElementById('orderHistory');
+
+      // Sample order data (replace with actual data fetched from backend)
+      const orders = [
+        {
+          id: 1,
+          items: [
+            { name: 'Item 1', price: '$10.00' },
+            { name: 'Item 2', price: '$15.00' }
+          ],
+          total: '$25.00',
+          date: '2024-02-25'
+        },
+        {
+          id: 2,
+          items: [
+            { name: 'Item 3', price: '$8.00' },
+            { name: 'Item 4', price: '$12.00' }
+          ],
+          total: '$20.00',
+          date: '2024-02-20'
+        }
+      ];
+
+      if (orders.length === 0) {
+        const noOrdersMessage = document.createElement('p');
+        noOrdersMessage.classList.add('no-orders-message');
+        noOrdersMessage.textContent = 'You haven\'t placed any orders yet.';
+        orderHistoryDiv.appendChild(noOrdersMessage);
+      } else {
+        orders.forEach(order => {
+          const orderDiv = document.createElement('div');
+          orderDiv.classList.add('order');
+          orderDiv.innerHTML = `
+            <h4>Order ID: ${order.id}</h4>
+            <p>Items:</p>
+            <ul>
+              ${order.items.map(item => `<li>${item.name} - ${item.price}</li>`).join('')}
+            </ul>
+            <p>Total: ${order.total}</p>
+            <p>Date: ${order.date}</p>
+          `;
+          orderHistoryDiv.appendChild(orderDiv);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
